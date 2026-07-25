@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بوب أب دا بي × المشروعات السياحية</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-deep:#1A1428; --bg-elevated:#2A1F3D; --bg-card:rgba(53,40,73,.7); --bg-card-hover:#3F3155;
+  --honey-50:#FFF4D6; --honey-100:#FFE7A8; --honey-200:#FFD56B; --honey-300:#FFB627; --honey-400:#E89400; --honey-500:#B86F00;
+  --text-primary:#FFF8E7; --text-secondary:#C9BFD9; --text-muted:#8A7FA0;
+  --rose:#E94560; --success:#4ECDC4; --purple:#A06CD5;
+  --glow-honey:0 0 24px rgba(255,182,39,.45);
+  --r-md:18px; --r-lg:24px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Baloo Bhaijaan 2','Fredoka',sans-serif;
+  background:var(--bg-deep); color:var(--text-primary);
+  overflow-x:hidden;
+}
+.en{font-family:'Fredoka',sans-serif}
+h1,h2,h3{line-height:1.25}
+
+.icon{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.icon-sm{width:19px;height:19px;vertical-align:-4px;margin-inline-end:8px;color:var(--honey-200)}
+
+/* ---------- NAV ---------- */
+nav{
+  position:fixed; top:0; right:0; left:0; z-index:100;
+  display:flex; align-items:center; gap:28px;
+  padding:14px 48px;
+  background:rgba(26,20,40,.75); backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+nav img{height:40px}
+nav .links{display:flex; gap:20px; margin-inline-start:auto; flex-wrap:wrap}
+nav a{color:var(--text-secondary); text-decoration:none; font-size:15px; font-weight:600; transition:color .2s}
+nav a:hover{color:var(--honey-300)}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative; min-height:100vh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  background:url('assets/bg.jpg') center/cover no-repeat;
+  padding:120px 24px 80px;
+}
+.hero::before{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(14,10,26,.62) 0%,rgba(14,10,26,.78) 55%,var(--bg-deep) 100%);
+}
+.hero>*{position:relative}
+.hero .logo{width:min(460px,70vw); filter:drop-shadow(0 0 34px rgba(255,182,39,.5)); animation:float 3.2s ease-in-out infinite}
+.hero .bee{position:absolute; width:110px; top:16%; inset-inline-start:12%; animation:floatBee 4s ease-in-out infinite; filter:drop-shadow(0 8px 24px rgba(0,0,0,.4))}
+.hero h1{font-size:clamp(38px,5.2vw,72px); font-weight:800; margin-top:18px}
+.hero h1 .gold{color:var(--honey-300); text-shadow:0 0 30px rgba(255,182,39,.45)}
+.hero .sub{font-size:clamp(18px,2.2vw,26px); color:var(--text-secondary); font-weight:600; margin-top:10px}
+.hero .pill{
+  display:inline-flex; align-items:center; gap:10px; margin-top:26px;
+  background:rgba(255,255,255,.08); backdrop-filter:blur(10px);
+  border:1.5px solid rgba(255,255,255,.14); border-radius:999px;
+  padding:10px 26px; font-size:17px; font-weight:600; color:var(--honey-100);
+}
+.hero .pill .icon{width:20px;height:20px}
+.btn{
+  display:inline-block; margin-top:34px; cursor:pointer; text-decoration:none;
+  background:linear-gradient(180deg,var(--honey-200),var(--honey-300));
+  color:#2A1804; font-weight:800; font-size:20px; font-family:inherit;
+  padding:16px 42px; border-radius:999px; border:none;
+  box-shadow:0 6px 0 var(--honey-500),0 10px 22px rgba(232,148,0,.4),inset 0 2px 0 rgba(255,255,255,.5);
+  transition:transform .15s, box-shadow .15s;
+}
+.btn:active{transform:translateY(4px); box-shadow:0 2px 0 var(--honey-500),0 6px 14px rgba(232,148,0,.3)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes floatBee{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-20px) rotate(4deg)}}
+
+/* ---------- STATS STRIP ---------- */
+.stats{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px;
+  max-width:1200px; margin:-70px auto 0; padding:0 24px; position:relative; z-index:5;
+}
+.stat{
+  background:var(--bg-card); backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.08); border-radius:var(--r-md);
+  padding:22px 16px; text-align:center;
+}
+.stat b{display:block; font-size:30px; color:var(--honey-200); font-weight:800}
+.stat span{color:var(--text-secondary); font-size:15px; font-weight:600}
+
+/* ---------- SECTIONS ---------- */
+section{max-width:1200px; margin:0 auto; padding:90px 24px 10px}
+.kicker{
+  display:inline-block; font-size:14px; font-weight:700; letter-spacing:.5px;
+  color:var(--honey-300); background:rgba(255,182,39,.12);
+  border:1px solid rgba(255,182,39,.35); border-radius:999px; padding:6px 18px; margin-bottom:14px;
+}
+h2{font-size:clamp(28px,3.4vw,44px); font-weight:800; margin-bottom:10px}
+.lead{color:var(--text-secondary); font-size:19px; max-width:860px; margin-bottom:36px; font-weight:500}
+.note{
+  margin-top:18px; padding:14px 20px; border-radius:var(--r-md);
+  background:rgba(255,182,39,.08); border:1px dashed rgba(255,182,39,.4);
+  color:var(--text-secondary); font-size:15px; line-height:1.8;
+}
+.note b{color:var(--honey-100)}
+
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px}
+.card{
+  background:var(--bg-card); backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.08); border-radius:var(--r-md);
+  padding:26px; transition:transform .25s, border-color .25s;
+}
+.card:hover{transform:translateY(-5px); border-color:rgba(255,182,39,.5)}
+.card .ico{
+  width:58px; height:58px; display:flex; align-items:center; justify-content:center;
+  margin-bottom:16px; color:#2A1804;
+  background:linear-gradient(180deg,var(--honey-200),var(--honey-300));
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+}
+.card h3{font-size:21px; margin-bottom:8px}
+.card p{color:var(--text-secondary); font-size:15.5px; line-height:1.75}
+.card .opts{margin-top:10px; display:flex; flex-wrap:wrap; gap:8px}
+.card .opts span{
+  background:rgba(255,182,39,.12); border:1px solid rgba(255,182,39,.35);
+  color:var(--honey-100); border-radius:999px; padding:4px 14px; font-size:14px; font-weight:700;
+}
+.card .fee{display:block; margin-top:12px; color:var(--honey-200); font-weight:800; font-size:15.5px}
+.card.featured{
+  border-color:rgba(255,182,39,.5);
+  background:linear-gradient(135deg,rgba(255,182,39,.16),var(--bg-card));
+}
+.subhead{display:flex; align-items:center; gap:12px; font-size:24px; margin:34px 0 16px}
+.subhead .icon{color:var(--honey-300)}
+
+/* ---------- IDEA SPLIT ---------- */
+.split{display:grid; grid-template-columns:1.05fr .95fr; gap:44px; align-items:center}
+.split .art{position:relative; text-align:center}
+.split .art img.girl{width:min(340px,75%); filter:drop-shadow(0 18px 40px rgba(0,0,0,.5))}
+.split .art .beefloat{position:absolute; width:130px; top:-30px; inset-inline-end:4%; animation:floatBee 4s ease-in-out infinite}
+.checks{list-style:none; display:grid; gap:14px; margin-top:8px}
+.checks li{
+  display:flex; gap:14px; align-items:flex-start;
+  background:var(--bg-card); border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--r-md); padding:16px 20px; font-size:16.5px; color:var(--text-secondary); line-height:1.7;
+}
+.checks li::before{
+  content:'✓'; flex-shrink:0; width:30px; height:30px; margin-top:2px;
+  display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(180deg,var(--honey-200),var(--honey-300));
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  color:#2A1804; font-weight:800; font-size:15px;
+}
+.checks b{color:var(--text-primary)}
+
+/* ---------- BOOTH ---------- */
+.booth{
+  display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center;
+  background:var(--bg-card); border:1px solid rgba(255,182,39,.35); border-radius:var(--r-lg);
+  padding:34px; box-shadow:var(--glow-honey);
+}
+.booth img{width:100%; border-radius:var(--r-md); display:block}
+.booth .ph{
+  aspect-ratio:16/9; border-radius:var(--r-md);
+  border:2px dashed rgba(255,182,39,.5);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  color:var(--text-muted); font-weight:600; font-size:17px;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(160,108,213,.18), transparent 60%),
+    radial-gradient(ellipse at 75% 80%, rgba(255,182,39,.15), transparent 55%),
+    var(--bg-elevated);
+}
+.booth .ph .hexrow{display:flex; gap:8px}
+.booth .ph .hexrow i{
+  width:34px; height:34px; display:block;
+  background:linear-gradient(180deg,var(--honey-200),var(--honey-300));
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  opacity:.85;
+}
+
+/* ---------- LEADERBOARD MOCK ---------- */
+.lbwrap{display:grid; grid-template-columns:.95fr 1.05fr; gap:44px; align-items:center}
+.lb{
+  background:var(--bg-elevated); border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--r-lg); overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+.lb .lbhead{
+  background:linear-gradient(180deg,var(--honey-200),var(--honey-300));
+  color:#2A1804; text-align:center; padding:14px; font-weight:800; font-size:18px;
+}
+.lb .lbhead .icon{width:20px;height:20px;vertical-align:-4px;margin-inline-end:6px}
+.lb .lbhead small{display:block; font-size:13px; font-weight:700; opacity:.8}
+.lb table{width:100%; border-collapse:collapse}
+.lb td{padding:13px 20px; font-size:16px; border-bottom:1px solid rgba(255,255,255,.06)}
+.lb tr td:first-child{width:54px; color:var(--honey-200); font-weight:800; font-size:18px}
+.lb tr td:last-child{text-align:left; color:var(--honey-100); font-weight:700}
+.lb tr.you{background:rgba(255,182,39,.14)}
+.lb .sponsor{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  padding:12px; color:var(--text-muted); font-size:14px; font-weight:600;
+  border-top:1px dashed rgba(255,182,39,.4);
+}
+.lb .sponsor .icon{width:20px;height:20px;color:var(--honey-200)}
+
+/* ---------- TABLES ---------- */
+table.plain{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:var(--bg-card); border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--r-md); overflow:hidden;
+}
+table.plain th{
+  background:rgba(255,182,39,.15); color:var(--honey-100);
+  font-size:16px; padding:15px 22px; text-align:right; font-weight:800;
+}
+table.plain td{padding:15px 22px; font-size:15.5px; color:var(--text-secondary); border-top:1px solid rgba(255,255,255,.06); line-height:1.7}
+table.plain td:first-child{color:var(--text-primary); font-weight:700}
+table.plain tr.total td{
+  background:linear-gradient(180deg,var(--honey-200),var(--honey-300));
+  color:#2A1804; font-weight:800; font-size:17px;
+}
+td.num{text-align:left; font-weight:700; color:var(--honey-200); white-space:nowrap}
+tr.total td.num{color:#2A1804}
+
+/* ---------- TIMELINE ---------- */
+.timeline{display:grid; gap:0; position:relative; margin-top:10px}
+.tstep{display:grid; grid-template-columns:64px 1fr; gap:20px; position:relative; padding-bottom:30px}
+.tstep::before{
+  content:''; position:absolute; top:52px; bottom:0; inset-inline-start:31px;
+  width:2px; background:rgba(255,182,39,.3);
+}
+.tstep:last-child::before{display:none}
+.tstep .dot{
+  width:52px; height:52px; z-index:1;
+  display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(180deg,var(--honey-200),var(--honey-300));
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  color:#2A1804; font-weight:800; font-size:18px;
+}
+.tstep .dot .icon{width:22px;height:22px}
+.tstep h3{font-size:19px; margin-bottom:4px}
+.tstep p{color:var(--text-secondary); font-size:15.5px; line-height:1.7}
+
+/* ---------- CTA ---------- */
+.cta{
+  text-align:center; padding:100px 24px 90px; margin-top:80px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,182,39,.16), transparent 55%),
+    var(--bg-elevated);
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.cta img{width:250px; margin-bottom:18px; filter:drop-shadow(0 0 26px rgba(255,182,39,.45))}
+.cta h2{font-size:clamp(30px,4vw,52px)}
+.cta p{color:var(--text-secondary); font-size:19px; margin-top:10px}
+footer{
+  text-align:center; padding:26px; color:var(--text-muted); font-size:14px; font-weight:600;
+  background:var(--bg-elevated); border-top:1px solid rgba(255,255,255,.05);
+}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .6s ease, transform .6s ease}
+.reveal.on{opacity:1; transform:none}
+
+@media (max-width:900px){
+  nav{padding:12px 20px}
+  nav .links{display:none}
+  .split,.booth,.lbwrap{grid-template-columns:1fr}
+  .stats{margin-top:-40px}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG ICON SPRITE -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+  <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 14v-3a8 8 0 0 1 16 0v3"/><rect x="2" y="14" width="5" height="7" rx="2"/><rect x="17" y="14" width="5" height="7" rx="2"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v4M8 21h8"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7-6.2-3.6L5.8 21l1.4-7L2 9.3l7-.8z"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="M2 18h20M4 18L3 7l5.5 4L12 4l3.5 7L21 7l-1 11z"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4"/><path d="M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8M12 8v13"/><path d="M12 8s-4.5 0-5.5-2C5.7 4.4 7 2 9 3c1.8.9 3 5 3 5zM12 8s4.5 0 5.5-2C18.3 4.4 17 2 15 3c-1.8.9-3 5-3 5z"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v6a5 5 0 0 1-10 0z"/><path d="M7 6H4a3 3 0 0 0 3 5M17 6h3a3 3 0 0 1-3 5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M16.5 15.6a5.5 5.5 0 0 1 5 4.9"/></symbol>
+  <symbol id="i-food" viewBox="0 0 24 24"><path d="M4 9a8 8 0 0 1 16 0z"/><path d="M3 13h18M4 17h16a2 2 0 0 1-2 3H6a2 2 0 0 1-2-3z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 7h12l1 14H5z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M21 5L8 9H4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4l13 4z"/><path d="M9 15v5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-umbrella" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 1 9 9H3a9 9 0 0 1 9-9z"/><path d="M12 12v7a2 2 0 0 0 4 1"/></symbol>
+  <symbol id="i-ferris" viewBox="0 0 24 24"><circle cx="12" cy="10" r="7"/><path d="M12 3v14M5.9 6.5l12.2 7M18.1 6.5l-12.2 7M12 17l-4 5M12 17l4 5"/></symbol>
+  <symbol id="i-tower" viewBox="0 0 24 24"><path d="M12 22V2"/><circle cx="12" cy="7" r="3"/><circle cx="12" cy="14" r="2"/></symbol>
+  <symbol id="i-hex" viewBox="0 0 24 24"><path d="M12 2l8 5v10l-8 5-8-5V7z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 2c4 2 6 6 6 10l-6 3-6-3c0-4 2-8 6-10z"/><circle cx="12" cy="9" r="2"/><path d="M6 15l-2 5 5-2M18 15l2 5-5-2"/></symbol>
+  <symbol id="i-radio" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M7 8L17 3"/><circle cx="8.5" cy="14.5" r="2.5"/><path d="M14 12h4M14 16h4"/></symbol>
+  <symbol id="i-news" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></symbol>
+  <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l3 6 3-6"/><path d="M12 21L9 9M12 21l3-12"/></symbol>
+  <symbol id="i-controller" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="5"/><path d="M7 10v4M5 12h4"/><circle cx="16" cy="11" r="1"/><circle cx="18.5" cy="13" r="1"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h2M8 11h2M8 15h2M14 7h2M14 11h2M14 15h2M10 21v-3h4v3"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2s5 4.5 5 9a5 5 0 0 1-10 0c0-2 1-3.5 2-5 0 2 1 3 2 3-.5-2.5.5-5 1-7z"/><path d="M12 22a7 7 0 0 0 7-7c0-1-.2-2-.5-3"/></symbol>
+  <symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="15" r="5"/><path d="M8 11L6 3h4l2 5 2-5h4l-2 8"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 13l4-4 3 3 6-6"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24"><path d="M2 9l10-4 10 4-10 4z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v5"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 7"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.5-4-9s1.5-6.5 4-9z"/></symbol>
+</svg>
+
+<nav>
+  <img src="assets/logo.png" alt="Da Bee">
+  <div class="links">
+    <a href="#idea">الفكرة</a>
+    <a href="#why">ليش المشروعات؟</a>
+    <a href="#venue">الموقع</a>
+    <a href="#map">التجربة</a>
+    <a href="#branding">البراندنق</a>
+    <a href="#comps">المسابقات</a>
+    <a href="#stars">النجوم</a>
+    <a href="#agenda">أجندة 14 يوم</a>
+    <a href="#cost">التكلفة</a>
+    <a href="#timeline">الجدول الزمني</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <img class="bee" src="assets/bee.svg" alt="">
+  <img class="logo" src="assets/logo.png" alt="Da Bee">
+  <h1>بوب أب <span class="gold">دا بي</span></h1>
+  <p class="sub">أول تجربة قيمنق حية من نوعها في الكويت — لمدة أسبوع إلى أسبوعين</p>
+  <div class="pill"><svg class="icon"><use href="#i-star"/></svg> عرض شراكة مقدم لشركة المشروعات السياحية</div>
+  <br>
+  <a class="btn" href="#idea">اكتشف الفكرة</a>
+</header>
+
+<!-- STATS -->
+<div class="stats reveal">
+  <div class="stat"><b>15–22 ألف</b><span>زيارة متوقعة خلال 14 يوم</span></div>
+  <div class="stat"><b>1,500–3,000</b><span>زائر يومياً في الويكند</span></div>
+  <div class="stat"><b>+6,000</b><span>تحميل جديد للعبة</span></div>
+  <div class="stat"><b>300–500 ألف</b><span>وصول رقمي متوقع</span></div>
+</div>
+
+<!-- IDEA -->
+<section id="idea" class="reveal">
+  <span class="kicker">الفكرة باختصار</span>
+  <h2>موقع سياحي يتحوّل إلى ساحة لعب حية</h2>
+  <p class="lead">«دا بي» لعبة موبايل كويتية 100% من تطوير Jaming World — النحلة «دابي» تطير وتتفادى خلايا العسل، مع تحدي جماعي مباشر ولوحة صدارة لحظية. ناخذ هالتجربة ونطلعها من الشاشة إلى أرض الواقع.</p>
+  <div class="split">
+    <ul class="checks">
+      <li><span>ناخذ موقع كبير من مواقع المشروعات السياحية ونحوله <b>لساحة «دا بي» تفاعلية</b> لمدة أسبوع إلى أسبوعين.</span></li>
+      <li><span>الجمهور يلعب من تلفونه داخل الموقع، وترتيبه يطلع <b>لايف على شاشة عملاقة</b> قدام الكل.</span></li>
+      <li><span><b>مسابقات يومية وبطولة كبرى</b>، ليالي دي جي وغناء، مناطق عائلية ومأكولات ومشروبات.</span></li>
+      <li><span>النتيجة: موقع ينبض بالحياة، وجمهور شاب وعائلي <b>يزوره أكثر من مرة</b> طوال الفعالية.</span></li>
+    </ul>
+    <div class="art">
+      <img class="beefloat" src="assets/bee.svg" alt="">
+      <img class="girl" src="assets/dabi-girl.png" alt="شخصية دابي">
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="reveal">
+  <span class="kicker">ليش هالشراكة؟</span>
+  <h2>وش تستفيد المشروعات السياحية؟</h2>
+  <div class="cards">
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-pin"/></svg></div><h3>تنشيط المواقع</h3><p>محتوى جديد كلياً يجذب جيل الشباب والعوائل لأحد مواقعكم، وحركة مباشرة على كل مرافق الموقع طوال الفعالية.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-megaphone"/></svg></div><h3>حضور إعلامي ورقمي</h3><p>تغطيات مؤثرين ومحتوى سوشيال ميديا يومي يبرز اسم المشروعات السياحية كشريك رسمي ومستضيف.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-phone"/></svg></div><h3>براندنق داخل اللعبة</h3><p>اسمكم وشعاركم داخل «دا بي» نفسها — وصول رقمي لكل لاعب، حتى اللي ما حضر الفعالية.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-repeat"/></svg></div><h3>تجربة قابلة للتكرار</h3><p>إذا نجحت النسخة الأولى، تتحول لفعالية موسمية ثابتة بمواقعكم — منتج سياحي جديد باسمكم.</p></div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section id="venue" class="reveal">
+  <span class="kicker">الموقع</span>
+  <h2>وين ممكن تصير؟</h2>
+  <p class="lead">نحتاج مساحة كبيرة مفتوحة أو شبه مغطاة تستوعب الشاشة العملاقة والمسرح ومناطق اللعب والجلسات، قريبة من حركة الجمهور ومع مواقف كافية. الخيار النهائي يتحدد بالتنسيق معكم.</p>
+  <div class="cards">
+    <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-umbrella"/></svg></div><h3>الجزيرة الخضراء</h3><p>مساحات مفتوحة واسعة وأجواء مميزة للفعاليات المسائية — مسرح طبيعي للتجربة.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-ferris"/></svg></div><h3>المدينة الترفيهية</h3><p>جمهور عائلي جاهز وبنية ترفيهية قائمة تكمل تجربة «دا بي».</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-tower"/></svg></div><h3>الواجهة البحرية / محيط الأبراج</h3><p>موقع أيقوني وكثافة زوار عالية — أقوى ظهور بصري للفعالية.</p></div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map" class="reveal">
+  <span class="kicker">خريطة التجربة</span>
+  <h2>مناطق الفعالية</h2>
+  <div class="cards">
+    <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-monitor"/></svg></div><h3>الساحة الرئيسية</h3><p>شاشة LED عملاقة تعرض لوحة الصدارة لايف + مسرح للدي جي والفقرات.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-hex"/></svg></div><h3>بوث دا بي</h3><p>مجسم خلية عسل مضيء بتصميم اللعبة — محطات لعب وركن تصوير مع شخصية «دابي».</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-target"/></svg></div><h3>منطقة التحدي</h3><p>محطات لعب مجهزة للمنافسات الرسمية وتصفيات البطولة.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-users"/></svg></div><h3>المنطقة العائلية</h3><p>ألعاب وأنشطة للأطفال وجلسات مريحة للعوائل.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-food"/></svg></div><h3>منطقة F&B</h3><p>عربات مأكولات ومشروبات وكافيهات بالتعاون مع مشاريع محلية.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-bag"/></svg></div><h3>متجر دا بي</h3><p>أغراض اللعبة الرسمية (Merch) — قبعات، تيشيرتات، ودمى «دابي».</p></div>
+  </div>
+  <br><br>
+  <div class="booth">
+    <div id="boothMedia">
+      <div class="ph">
+        <div class="hexrow"><i></i><i></i><i></i></div>
+        <span>التصور المبدئي لبوث «دا بي» — خلية عسل مضيئة بألوان اللعبة</span>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:26px; margin-bottom:10px">بوث «دا بي»</h3>
+      <p style="color:var(--text-secondary); font-size:16.5px; line-height:1.9">
+        مجسم سداسي ضخم بشكل خلية العسل، بإضاءة نيون عسلية وبنفسجية مطابقة لهوية اللعبة.
+        داخله شاشات لعب مباشرة، مقاعد على شكل خلايا، وشخصية «دابي» تستقبل الزوار —
+        نقطة التصوير الأولى بالفعالية ومحتوى جاهز للسوشيال ميديا.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDING -->
+<section id="branding" class="reveal">
+  <span class="kicker">البراندنق داخل اللعبة</span>
+  <h2>«المشروعات السياحية» جوه دا بي</h2>
+  <div class="lbwrap">
+    <div>
+      <ul class="checks">
+        <li><span><b>لوحة الصدارة الرسمية</b> طوال الفعالية تحمل اسم وشعار المشروعات السياحية.</span></li>
+        <li><span><b>خلفية حصرية داخل اللعبة</b> مستوحاة من الموقع المستضيف — يلعب عليها كل المشاركين.</span></li>
+        <li><span>شعاركم في <b>شاشات اللعبة الرئيسية</b> طوال فترة الفعالية.</span></li>
+        <li><span>كل لاعب حمّل اللعبة — حتى اللي ما حضر — <b>بيشوف اسمكم داخلها</b>.</span></li>
+      </ul>
+    </div>
+    <div class="lb">
+      <div class="lbhead"><svg class="icon"><use href="#i-trophy"/></svg> لوحة الصدارة <small>برعاية شركة المشروعات السياحية</small></div>
+      <table>
+        <tr><td>1</td><td>سعود العتيبي</td><td>12,450</td></tr>
+        <tr><td>2</td><td>ليان الفهد</td><td>11,980</td></tr>
+        <tr class="you"><td>3</td><td>خالد المطيري</td><td>11,540</td></tr>
+        <tr><td>4</td><td>نورة السالم</td><td>10,870</td></tr>
+      </table>
+      <div class="sponsor"><svg class="icon"><use href="#i-building"/></svg> شعار المشروعات السياحية هنا</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITIONS -->
+<section id="comps" class="reveal">
+  <span class="kicker">المسابقات</span>
+  <h2>منافسات ما توقف طوال الفعالية</h2>
+  <p class="lead">جوائز إجمالية بقيمة <b style="color:var(--honey-200)">~15,000 د.ك</b> — كاش، أجهزة، قسائم، وعملات داخل اللعبة.</p>
+  <div class="cards">
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-bolt"/></svg></div><h3>التحدي اليومي</h3><p>أعلى نقاط خلال اليوم يفوز بجائزة فورية تتوزع كل ليلة على المسرح.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-mic"/></svg></div><h3>بطولة الويكند</h3><p>تصفيات كل نهاية أسبوع على المسرح الرئيسي قدام الجمهور.</p></div>
+    <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-crown"/></svg></div><h3>البطولة الكبرى</h3><p>ختام الفعالية — أفضل اللاعبين يتنافسون لايف على الشاشة العملاقة على الجائزة الكبرى.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-gift"/></svg></div><h3>مسابقات الجمهور</h3><p>فقرات تفاعلية بين الفقرات وجوائز حضورية للعوائل والأطفال.</p></div>
+  </div>
+  <br>
+  <table class="plain">
+    <tr><th>الجائزة</th><th style="text-align:left">القيمة</th></tr>
+    <tr><td><svg class="icon icon-sm" style="color:#FFD56B"><use href="#i-medal"/></svg>بطل البطولة الكبرى</td><td class="num">5,000 د.ك + كأس دا بي الذهبي</td></tr>
+    <tr><td><svg class="icon icon-sm" style="color:#C9C9D4"><use href="#i-medal"/></svg>الوصيف</td><td class="num">2,000 د.ك</td></tr>
+    <tr><td><svg class="icon icon-sm" style="color:#CD8B4F"><use href="#i-medal"/></svg>المركز الثالث</td><td class="num">1,000 د.ك</td></tr>
+    <tr><td><svg class="icon icon-sm"><use href="#i-bolt"/></svg>التحدي اليومي (فائز كل يوم)</td><td class="num">200 د.ك × 14 يوم + أجهزة PS5 / iPhone / iPad</td></tr>
+    <tr><td><svg class="icon icon-sm"><use href="#i-gift"/></svg>مسابقات الجمهور والعوائل</td><td class="num">قسائم وهدايا يومية (~2,000 د.ك)</td></tr>
+    <tr class="total"><td>إجمالي الجوائز</td><td class="num">~15,000 د.ك</td></tr>
+  </table>
+</section>
+
+<!-- STARS -->
+<section id="stars" class="reveal">
+  <span class="kicker">نجوم الفعالية</span>
+  <h2>منو بييي؟</h2>
+  <p class="lead">لكل فقرة أكثر من خيار — نثبّت الأسماء حسب التوفر والتفاوض مع الوكلاء. الأرقام تقديرات سوقية مبدئية وليست عروض أسعار.</p>
+
+  <div class="subhead"><svg class="icon"><use href="#i-headphones"/></svg><h3>الدي جي العالمي</h3></div>
+  <div class="cards">
+    <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-headphones"/></svg></div><h3>ليلتا الافتتاح والختام</h3>
+      <div class="opts"><span>R3HAB</span><span>Sam Feldt</span><span>Lost Frequencies</span></div>
+      <p style="margin-top:10px">اسم عالمي له حضور قوي بالخليج يفتتح الفعالية ويختمها.</p><b class="fee">التقدير: 30–40 ألف د.ك (ليلتين، شامل السفر)</b></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-music"/></svg></div><h3>ليلة Glow Night (منتصف الفعالية)</h3>
+      <div class="opts"><span>دي جي خليجي مميز</span><span>أو ثاني اسم عالمي</span></div>
+      <p style="margin-top:10px">ليلة نيون شبابية تجدد الزخم في الأسبوع الثاني.</p><b class="fee">التقدير: 5–10 آلاف د.ك (دي جي خليجي)</b></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-gem"/></svg></div><h3>الخيار البريميوم (اختياري)</h3>
+      <div class="opts"><span>Marshmello</span><span>DJ Snake</span><span>Tiësto</span></div>
+      <p style="margin-top:10px">لو نبي ضجة إقليمية — يرفع الإجمالي بشكل كبير.</p><b class="fee">التقدير: 90–150 ألف د.ك</b></div>
+  </div>
+
+  <div class="subhead"><svg class="icon"><use href="#i-mic"/></svg><h3>الليالي الغنائية</h3></div>
+  <div class="cards">
+    <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-crown"/></svg></div><h3>الليلة الغنائية الكبرى</h3>
+      <div class="opts"><span>نبيل شعيل</span><span>فضل شاكر</span><span>عبدالله الرويشد</span></div>
+      <p style="margin-top:10px">سبت الويكند الثاني — الليلة اللي تتصدر الأخبار وتجيب الجمهور الأوسع.</p><b class="fee">التقدير: 25–40 ألف د.ك</b></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-music"/></svg></div><h3>الليلة الشبابية العائلية</h3>
+      <div class="opts"><span>بدر الشعيبي</span><span>حمود الخضر</span><span>وليد الشامي</span></div>
+      <p style="margin-top:10px">سبت الويكند الأول — طابع شبابي عائلي يناسب أجواء اللعبة.</p><b class="fee">التقدير: 8–15 ألف د.ك</b></div>
+  </div>
+
+  <div class="subhead"><svg class="icon"><use href="#i-globe"/></svg><h3>المؤثرون — الكويت والعالم العربي</h3></div>
+  <table class="plain">
+    <tr><th>الفقرة</th><th>الخيار الأول</th><th>البدائل</th><th style="text-align:left">التقدير (د.ك)</th></tr>
+    <tr><td>ضيف شرف ليلة المؤثرين</td><td>أبو فلة</td><td>دحومي999 · بندريتا</td><td class="num">10,000–18,000</td></tr>
+    <tr><td>نجم المحتوى العربي (توثيق التجربة لجمهور عربي)</td><td>جو حطاب</td><td>عمر فاروق (البحرين) · أنس وأصالة</td><td class="num">8,000–15,000</td></tr>
+    <tr><td>البث المباشر للبطولة</td><td>بندريتا</td><td>MZ7</td><td class="num">6,000–12,000</td></tr>
+    <tr><td>تعليق البطولة والتغطية اليومية</td><td>شونق بونق</td><td>مؤثر قيمنق كويتي</td><td class="num">3,000–6,000</td></tr>
+    <tr><td>تغطيات يومية منوعة</td><td>10 مؤثرين كويتيين (لايف ستايل وعائلي)</td><td>—</td><td class="num">4,000–8,000</td></tr>
+  </table>
+  <div class="note"><b>ليش نجم عربي مو بس محلي؟</b> فيديو واحد من جو حطاب أو عمر فاروق يوصل الفعالية — وموقع المشروعات السياحية — لملايين المشاهدين بالوطن العربي، ويحوّل البوب أب من فعالية محلية إلى قصة سياحية عن الكويت.</div>
+  <br>
+  <div class="cards">
+    <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-radio"/></svg></div><h3>الشريك الإذاعي: Marina FM</h3><p>إطلاق الإعلان الرسمي من برنامج علي نجم + بث يومي من أرض الفعالية طوال الأسبوعين.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-news"/></svg></div><h3>التغطية الإعلامية</h3><p>مؤتمر صحفي للإطلاق بالشراكة مع المشروعات السياحية + تغطية الصحف والمواقع المحلية.</p></div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda" class="reveal">
+  <span class="kicker">أجندة الفعالية</span>
+  <h2>14 يوم — يوم بيوم</h2>
+  <p class="lead">إيقاع ثابت كل يوم، وفقرة رئيسية تتغير كل ليلة عشان الجمهور يرجع أكثر من مرة.</p>
+  <div class="cards">
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-users"/></svg></div><h3>4:00 – 6:30</h3><p>فترة العوائل: أنشطة أطفال، شخصية «دابي»، لعب حر على المحطات.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-target"/></svg></div><h3>6:30 – 9:00</h3><p>فترة التحديات: التحدي اليومي والتصفيات على المسرح الرئيسي.</p></div>
+    <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-star"/></svg></div><h3>9:00 – 12:00</h3><p>الفقرة الرئيسية: دي جي / ليلة غنائية / مؤثرين — حسب جدول الليلة.</p></div>
+  </div>
+  <br>
+  <h3 style="font-size:22px; margin-bottom:14px">الأسبوع الأول</h3>
+  <table class="plain">
+    <tr><th>اليوم</th><th>الفقرة الرئيسية</th></tr>
+    <tr><td>الخميس — يوم 1</td><td><svg class="icon icon-sm"><use href="#i-sparkles"/></svg>حفل الافتتاح: الدي جي العالمي + عرض درون افتتاحي + حضور المؤثرين وكبار الشخصيات</td></tr>
+    <tr><td>الجمعة — يوم 2</td><td><svg class="icon icon-sm"><use href="#i-users"/></svg>يوم العوائل: مسرح أطفال، مسابقات جمهور، دي جي محلي</td></tr>
+    <tr><td>السبت — يوم 3</td><td><svg class="icon icon-sm"><use href="#i-mic"/></svg>الليلة الشبابية العائلية: بدر الشعيبي أو حمود الخضر أو وليد الشامي + تصفيات الأسبوع</td></tr>
+    <tr><td>الأحد — يوم 4</td><td><svg class="icon icon-sm"><use href="#i-grad"/></svg>تحدي الجامعات: فرق الجامعات والكليات تتنافس باسمها</td></tr>
+    <tr><td>الاثنين — يوم 5</td><td><svg class="icon icon-sm"><use href="#i-hex"/></svg>يوم دابي: لعب حر + التحدي اليومي + فقرات أطفال</td></tr>
+    <tr><td>الثلاثاء — يوم 6</td><td><svg class="icon icon-sm"><use href="#i-users"/></svg>تحدي الفرق 2×2 + أمسية كوميدية مع مؤثرين محليين</td></tr>
+    <tr><td>الأربعاء — يوم 7</td><td><svg class="icon icon-sm"><use href="#i-controller"/></svg>تحدي المشاهير: شونق بونق ضد الجمهور — أول بث مباشر للبطولة</td></tr>
+  </table>
+  <br>
+  <h3 style="font-size:22px; margin-bottom:14px">الأسبوع الثاني</h3>
+  <table class="plain">
+    <tr><th>اليوم</th><th>الفقرة الرئيسية</th></tr>
+    <tr><td>الخميس — يوم 8</td><td><svg class="icon icon-sm"><use href="#i-sparkles"/></svg>Glow Night: ليلة دي جي بإضاءة نيون وتوزيعات مضيئة</td></tr>
+    <tr><td>الجمعة — يوم 9</td><td><svg class="icon icon-sm"><use href="#i-users"/></svg>يوم العوائل الكبير: عروض دابي + مسابقات أطفال بجوائز مضاعفة + نجم المحتوى العربي (جو حطاب أو عمر فاروق)</td></tr>
+    <tr><td>السبت — يوم 10</td><td><svg class="icon icon-sm"><use href="#i-crown"/></svg>الليلة الغنائية الكبرى: نبيل شعيل أو فضل شاكر أو عبدالله الرويشد</td></tr>
+    <tr><td>الأحد — يوم 11</td><td><svg class="icon icon-sm"><use href="#i-building"/></svg>تحدي الشركات: فرق الشركات والجهات — يوم مخصص للـ B2B</td></tr>
+    <tr><td>الاثنين — يوم 12</td><td><svg class="icon icon-sm"><use href="#i-target"/></svg>ربع النهائي + حفل توزيع جوائز التحديات اليومية</td></tr>
+    <tr><td>الثلاثاء — يوم 13</td><td><svg class="icon icon-sm"><use href="#i-flame"/></svg>ليلة المؤثرين الكبرى: ضيف الشرف (أبو فلة أو دحومي999) + نصف النهائي</td></tr>
+    <tr><td>الأربعاء — يوم 14</td><td><svg class="icon icon-sm"><use href="#i-trophy"/></svg>الختام: النهائي الكبير على الشاشة العملاقة + الدي جي العالمي + عرض الدرون الختامي + التتويج</td></tr>
+  </table>
+</section>
+
+<!-- IMPACT -->
+<section id="impact" class="reveal">
+  <span class="kicker">الأثر المتوقع</span>
+  <h2>أرقام واقعية — مبنية على فعاليات مشابهة</h2>
+  <div class="cards">
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-users"/></svg></div><h3>الحضور</h3><p>أيام الأسبوع (8 أيام): 700–1,200 زائر · الويكند والليالي الكبرى (6 أيام): 1,500–3,000 زائر<br><b style="color:var(--honey-200)">الإجمالي: 15–22 ألف زيارة خلال 14 يوم</b></p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-phone"/></svg></div><h3>اللعبة</h3><p>5,000–8,000 تحميل جديد خلال الفعالية، ولوحة صدارة نشطة باسم المشروعات السياحية طوال المدة.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-chart"/></svg></div><h3>الوصول الرقمي</h3><p>300–500 ألف وصول عبر المؤثرين المحليين والإعلانات — <b style="color:var(--honey-200)">ويقفز فوق المليون</b> إذا انضم نجم عربي مثل أبو فلة أو جو حطاب.</p></div>
+  </div>
+  <div class="note"><b>منهجية الأرقام:</b> تقديرات محافظة مبنية على معدلات حضور الفعاليات العائلية والشبابية بالكويت (مهرجانات الموسم، فعاليات الأفنيوز والمباركية) مع أخذ متوسط أيام الأسبوع الأضعف بالحسبان — نلتزم بالحد الأدنى ونشتغل على تجاوزه.</div>
+</section>
+
+<!-- COST -->
+<section id="cost" class="reveal">
+  <span class="kicker">التكلفة</span>
+  <h2>التكلفة التقديرية</h2>
+  <p class="lead">سيناريو كامل التفاصيل بسقف مفتوح للجودة — قابل للتعديل حسب الموقع النهائي والتفاوض مع الوكلاء والموردين.</p>
+  <table class="plain">
+    <tr><th>البند</th><th style="text-align:left">التكلفة (د.ك)</th></tr>
+    <tr><td>الشاشة العملاقة الرئيسية + شاشتين جانبيتين (إيجار 14 يوم)</td><td class="num">16,000</td></tr>
+    <tr><td>الدي جي العالمي — ليلتا الافتتاح والختام (R3HAB أو مستواه)</td><td class="num">35,000</td></tr>
+    <tr><td>ليلة Glow Night (دي جي خليجي مميز)</td><td class="num">5,000</td></tr>
+    <tr><td>الليلة الغنائية الكبرى (نبيل شعيل أو فضل شاكر أو الرويشد)</td><td class="num">30,000</td></tr>
+    <tr><td>الليلة الشبابية العائلية (بدر الشعيبي أو حمود الخضر أو وليد الشامي)</td><td class="num">12,000</td></tr>
+    <tr><td>أنظمة الصوت والإضاءة الاحترافية (14 يوم + الليالي الكبرى)</td><td class="num">12,000</td></tr>
+    <tr><td>تجهيز الموقع والبنية المؤقتة (مسرح، بوث، أرضيات، أجنحة)</td><td class="num">15,000</td></tr>
+    <tr><td>منطقة التحدي — محطات وأجهزة اللعب</td><td class="num">8,000</td></tr>
+    <tr><td>جوائز المسابقات (تفصيلها بقسم المسابقات)</td><td class="num">15,000</td></tr>
+    <tr><td>المؤثرون ونجوم المحتوى العربي + إنتاج المحتوى والتوثيق</td><td class="num">30,000</td></tr>
+    <tr><td>عرض الدرون الافتتاحي (~200 طائرة)</td><td class="num">10,000</td></tr>
+    <tr><td>الحملة التسويقية والإعلانات المدفوعة</td><td class="num">8,000</td></tr>
+    <tr><td>التشغيل والأمن والنظافة (14 يوم)</td><td class="num">8,000</td></tr>
+    <tr><td>احتياطي طوارئ (~10% من المجموع)</td><td class="num">20,000</td></tr>
+    <tr class="total"><td>الإجمالي التقديري — السيناريو الكامل</td><td class="num">224,000 د.ك</td></tr>
+  </table>
+  <div class="note"><b>كيف انحسبت الأرقام؟</b> المجموع قبل الاحتياطي 204,000 د.ك (تقدر تجمع البنود وتتأكد) + احتياطي ~10% = 224,000 د.ك. الأسعار مبنية على متوسطات السوق: إيجار شاشات LED باليوم، أجور الحفلات المعلنة بالخليج، وأسعار تجهيز الفعاليات بالكويت — وكل بند قابل للتفاوض والتنزيل.</div>
+  <br>
+  <div class="cards">
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-chart"/></svg></div><h3>النسخة الاقتصادية</h3><p>دي جي عالمي واحد + الليلة الشبابية فقط + بدون درون ونجم عربي ≈ <b style="color:var(--honey-200)">145,000 د.ك</b></p></div>
+    <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-gem"/></svg></div><h3>نسخة البريميوم</h3><p>إضافة Marshmello / DJ Snake للختام + عرض درون ثاني ≈ <b style="color:var(--honey-200)">350,000+ د.ك</b></p></div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="reveal">
+  <span class="kicker">الجدول الزمني</span>
+  <h2>من الموافقة إلى الافتتاح — 7 أسابيع</h2>
+  <div class="timeline" style="margin-top:30px">
+    <div class="tstep"><div class="dot">1</div><div><h3>الأسبوع 1–2</h3><p>توقيع الاتفاقية وتحديد الموقع النهائي مع المشروعات السياحية.</p></div></div>
+    <div class="tstep"><div class="dot">2</div><div><h3>الأسبوع 3–4</h3><p>التصاميم والتراخيص والتعاقد مع النجوم والموردين.</p></div></div>
+    <div class="tstep"><div class="dot">3</div><div><h3>الأسبوع 5–6</h3><p>تجهيز الموقع وتركيب الشاشات والمسرح + انطلاق الحملة التشويقية.</p></div></div>
+    <div class="tstep"><div class="dot"><svg class="icon"><use href="#i-trophy"/></svg></div><div><h3>الأسبوع 7 — الافتتاح</h3><p>انطلاق بوب أب «دا بي» — أول تجربة قيمنق حية من نوعها بالكويت.</p></div></div>
+  </div>
+  <br>
+  <div class="cards">
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-building"/></svg></div><h3>المطلوب منكم</h3><p>توفير الموقع طوال الفعالية + أيام التجهيز والتفكيك، تسهيل التراخيص والموافقات، والظهور الإعلامي المشترك كشريك رسمي.</p></div>
+    <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-check"/></svg></div><h3>وعلينا الباقي</h3><p>كل الإنتاج والتشغيل والتسويق والمحتوى والجوائز — فريق Jaming World يدير الفعالية من أول يوم لآخر يوم.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta reveal">
+  <img src="assets/logo.png" alt="Da Bee">
+  <h2>خلونا نسوي شي ما صار بالكويت</h2>
+  <p>نحدد اجتماع، نزور المواقع، ونبدأ العد التنازلي لأول بوب أب قيمنق من نوعه.</p>
+  <a class="btn" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">فريق Jaming World — دا بي</a>
+</div>
+
+<footer>عرض شراكة — بوب أب «دا بي» × شركة المشروعات السياحية · Jaming World © 2026 · الأسماء والأرقام تقديرات مبدئية قابلة للتغيير حسب التوفر والتعاقد</footer>
+
+<script>
+// booth image: use assets/booth.png if it exists
+(function(){
+  var img=new Image();
+  img.onload=function(){
+    var host=document.getElementById('boothMedia');
+    host.innerHTML='';
+    img.alt='التصور المبدئي لبوث دا بي';
+    img.style.width='100%'; img.style.borderRadius='18px';
+    host.appendChild(img);
+  };
+  img.src='assets/booth.png';
+})();
+// scroll reveal
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
