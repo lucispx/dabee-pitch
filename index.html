@@ -76,6 +76,11 @@ nav a:hover{color:var(--honey-300)}
   transition:transform .15s, box-shadow .15s;
 }
 .btn:active{transform:translateY(4px); box-shadow:0 2px 0 var(--honey-500),0 6px 14px rgba(232,148,0,.3)}
+.partners{margin-top:22px}
+.logochip{background:#fff; border-radius:16px; padding:10px 22px; display:inline-block; box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.logochip img{height:52px; display:block}
+.logochip.sm{padding:7px 16px; border-radius:12px}
+.logochip.sm img{height:34px}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @keyframes floatBee{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-20px) rotate(4deg)}}
 
@@ -318,7 +323,6 @@ footer{
   <div class="links">
     <a href="#idea">الفكرة</a>
     <a href="#why">ليش المشروعات؟</a>
-    <a href="#venue">الموقع</a>
     <a href="#map">التجربة</a>
     <a href="#branding">البراندنق</a>
     <a href="#comps">المسابقات</a>
@@ -336,7 +340,7 @@ footer{
   <h1>بوب أب <span class="gold">دا بي</span></h1>
   <p class="sub">أول تجربة قيمنق حية من نوعها في الكويت — لمدة أسبوع إلى أسبوعين</p>
   <div class="pill"><svg class="icon"><use href="#i-star"/></svg> عرض شراكة مقدم لشركة المشروعات السياحية</div>
-  <br>
+  <div class="partners"><span class="logochip"><img src="assets/tec-logo.png" alt="شركة المشروعات السياحية"></span></div>
   <a class="btn" href="#idea">اكتشف الفكرة</a>
 </header>
 
@@ -377,19 +381,6 @@ footer{
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-phone"/></svg></div><h3>براندنق داخل اللعبة</h3><p>اسمكم وشعاركم داخل «دا بي» نفسها — وصول رقمي لكل لاعب، حتى اللي ما حضر الفعالية.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-repeat"/></svg></div><h3>تجربة قابلة للتكرار</h3><p>إذا نجحت النسخة الأولى، تتحول لفعالية موسمية ثابتة بمواقعكم — منتج سياحي جديد باسمكم.</p></div>
   </div>
-</section>
-
-<!-- VENUE -->
-<section id="venue" class="reveal">
-  <span class="kicker">الموقع</span>
-  <h2>وين ممكن تصير؟</h2>
-  <p class="lead">نحتاج مساحة كبيرة مفتوحة أو شبه مغطاة تستوعب الشاشة العملاقة والمسرح ومناطق اللعب والجلسات، قريبة من حركة الجمهور ومع مواقف كافية. الخيار النهائي يتحدد بالتنسيق معكم.</p>
-  <div class="cards">
-    <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-umbrella"/></svg></div><h3>الجزيرة الخضراء</h3><p>مفتوحة وتستضيف موسم فعاليات سنوي — مساحات واسعة وأجواء مميزة للفعاليات المسائية.</p></div>
-    <div class="card"><div class="ico"><svg class="icon"><use href="#i-tower"/></svg></div><h3>محيط أبراج الكويت / الواجهة البحرية</h3><p>الموقع الأيقوني الأول للشركة — كثافة زوار عالية وأقوى ظهور بصري للفعالية.</p></div>
-    <div class="card"><div class="ico"><svg class="icon"><use href="#i-wave"/></svg></div><h3>شاطئ المسيلة</h3><p>شاطئ عائلي تشغيلي تابع للشركة بمساحات واسعة — مناسب لنسخة صيفية بحرية من الفعالية.</p></div>
-  </div>
-  <div class="note"><b>ملاحظة:</b> الخيارات الثلاثة محصورة بالمواقع التشغيلية الحالية التابعة لشركة المشروعات السياحية — والاختيار النهائي يرجع للشركة حسب جاهزية الموقع وجدول فعالياتها.</div>
 </section>
 
 <!-- MAP -->
@@ -444,7 +435,7 @@ footer{
         <tr class="you"><td>3</td><td>خالد المطيري</td><td>11,540</td></tr>
         <tr><td>4</td><td>نورة السالم</td><td>10,870</td></tr>
       </table>
-      <div class="sponsor"><svg class="icon"><use href="#i-building"/></svg> شعار المشروعات السياحية هنا</div>
+      <div class="sponsor"><span class="logochip sm"><img src="assets/tec-logo.png" alt="شركة المشروعات السياحية"></span></div>
     </div>
   </div>
 </section>
@@ -609,7 +600,7 @@ footer{
   </div>
   <br>
   <div class="cards">
-    <div class="card"><div class="ico"><svg class="icon"><use href="#i-building"/></svg></div><h3>المطلوب منكم</h3><p>توفير الموقع طوال الفعالية + أيام التجهيز والتفكيك، تسهيل التراخيص والموافقات، والظهور الإعلامي المشترك كشريك رسمي.</p></div>
+    <div class="card"><div class="ico"><svg class="icon"><use href="#i-building"/></svg></div><h3>المطلوب منكم</h3><p>توفير موقع من مواقعكم تختارونه — مساحة كبيرة مفتوحة أو شبه مغطاة مع مواقف كافية — طوال الفعالية + أيام التجهيز والتفكيك، تسهيل التراخيص، والظهور الإعلامي المشترك كشريك رسمي.</p></div>
     <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-check"/></svg></div><h3>وعلينا الباقي</h3><p>كل الإنتاج والتشغيل والتسويق والمحتوى والجوائز — فريق Jaming World يدير الفعالية من أول يوم لآخر يوم.</p></div>
   </div>
 </section>
