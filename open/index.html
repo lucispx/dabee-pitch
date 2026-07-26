@@ -273,6 +273,21 @@ footer{
   .split,.booth,.lbwrap{grid-template-columns:1fr}
   .stats{margin-top:-40px}
 }
+
+/* ---------- PRINT ---------- */
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  nav { display: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .hero { min-height: 100vh; }
+  .hero .logo, .hero .bee { animation: none !important; }
+  .beefloat { animation: none !important; }
+  section { padding: 50px 40px 10px; }
+  .card, table.plain, .booth, .lb, .stat, .tstep, .note { break-inside: avoid; }
+  .cta { margin-top: 40px; }
+  a[href]::after { content: none !important; }
+}
 </style>
 </head>
 <body>
