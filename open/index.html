@@ -288,12 +288,15 @@ footer{
   .stats { margin-top: -30px; break-inside: avoid; }
   section { break-before: page; min-height: 124vh; display: flex; flex-direction: column; justify-content: center; padding: 34px 40px; max-width: 1160px; }
   section > .kicker { align-self: flex-start; width: auto; }
+  .hero .btn { display: none; }
+  .hero .partners { margin-top: 28px; }
+  .hero .pill { margin-top: 30px; }
   .cta { break-before: page; min-height: 124vh; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 0; padding: 40px; }
   .btn { box-shadow: 0 5px 0 var(--honey-500), inset 0 2px 0 rgba(255,255,255,.5) !important; }
   .split .art img.girl { width: 240px; }
   .split .art .beefloat { width: 90px; }
   .card, table.plain, .booth, .lb, .tstep, .note, .checks li, .stats { break-inside: avoid; }
-  .pb { break-before: page; padding-top: 70px; }
+  .pb { break-before: page; padding-top: 110px !important; }
   .checks li { padding: 12px 16px; }
   .lb td { padding: 10px 16px; }
   .lead { margin-bottom: 22px; }
@@ -313,6 +316,20 @@ footer{
   h2 { break-after: avoid; }
   .kicker { break-after: avoid; }
   a[href]::after { content: none !important; }
+  .split { grid-template-columns: 1.05fr .95fr; }
+  .booth { grid-template-columns: 1.15fr .85fr; }
+  .lbwrap { grid-template-columns: .95fr 1.05fr; }
+  .grid2 { grid-template-columns: repeat(2,1fr); }
+  #journey .cards { grid-template-columns: repeat(3,1fr) !important; }
+  section br { display: none; }
+  br + table.plain, br + .cards, br + .booth, br + .timeline { margin-top: 20px; }
+  #stars, #agenda, #map { padding-top: 110px; }
+  #cost table.plain td, #tournament table.plain td { padding: 8px 16px; }
+  #tournament { padding-top: 24px; padding-bottom: 20px; }
+  #tournament .card { padding: 18px 24px; }
+  #tournament .cards { gap: 14px; }
+  .booth.pb { padding-top: 34px !important; position: relative; top: 280px; }
+  .cta { min-height: 112vh; }
 }
 </style>
 </head>
@@ -379,7 +396,6 @@ footer{
 
 <!-- HERO -->
 <header class="hero">
-  <img class="bee" src="../assets/bee.svg" alt="">
   <img class="logo" src="../assets/logo.png" alt="Da Bee">
   <h1>دا بي أرينا <span class="gold">× موسم الرياض</span></h1>
   <p class="sub">أول لعبة موبايل خليجية تتحول لأتراكشن حي — من أكتوبر ولمدة 3–4 أشهر</p>
@@ -409,7 +425,6 @@ footer{
       <li><span>الأتراكشن الوحيد اللي <b>يكمل بجيب الزائر بعد ما يروح</b> — اللعبة بتلفونه ولوحة الصدارة تناديه يرجع.</span></li>
     </ul>
     <div class="art">
-      <img class="beefloat" src="../assets/bee.svg" alt="">
       <img class="girl" src="../assets/dabi-girl.png" alt="شخصية دابي">
     </div>
   </div>
@@ -432,7 +447,7 @@ footer{
 <section id="arena" class="reveal">
   <span class="kicker">الأرينا</span>
   <h2>مكونات دا بي أرينا</h2>
-  <div class="cards">
+  <div class="cards grid2">
     <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-monitor"/></svg></div><h3>الشاشة ولوحة الصدارة</h3><p>شاشة LED تعرض الترتيب لايف + فقرات مع مقدم فعاليات يدير البرنامج.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-hex"/></svg></div><h3>خلية اللعب</h3><p>محطات لعب داخل المجسم السداسي المضيء بهوية اللعبة.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-star"/></svg></div><h3>ركن دابي والتصوير</h3><p>شخصية «دابي» تستقبل الزوار — نقطة تصوير ومحتوى جاهز للسوشيال.</p></div>
@@ -503,7 +518,7 @@ footer{
   <span class="kicker">بطولة الموسم</span>
   <h2>بطولة تعيش عمر الموسم كله</h2>
   <p class="lead">سبليتس شهرية عشان اللاعب الجديد يلحق يدخل المنافسة بأي شهر — والنقاط تتراكم للترتيب العام ونهائي الموسم الكبير. إجمالي الجوائز <b style="color:var(--honey-200)">~180,000 ريال</b>.</p>
-  <div class="cards">
+  <div class="cards grid2">
     <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-trophy"/></svg></div><h3>الترتيب العام</h3><p>متصدر الموسم كامل هو بطل «دا بي أرينا» — يتوج بحفل ختام الموسم.</p></div>
     <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-calendar"/></svg></div><h3>البطولات الشهرية</h3><p>3 بطولات شهرية — كل شهر بطل وجوائز، وفرصة جديدة لأي لاعب يدخل المنافسة.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-bolt"/></svg></div><h3>التوب 5 اليومي</h3><p>كردت أكل ومشروبات بمطاعم المنطقة + هدايا دا بي — حافز يرجّع المتصدرين كل يوم.</p></div>
@@ -551,7 +566,7 @@ footer{
 <section id="season" class="reveal">
   <span class="kicker">هيكل الموسم</span>
   <h2>إيقاع 3–4 أشهر</h2>
-  <div class="cards">
+  <div class="cards grid2">
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-controller"/></svg></div><h3>يومياً</h3><p>تشغيل مفتوح للأرينا: لعب حر + التحدي اليومي + التوب 5.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-mic"/></svg></div><h3>كل ويكند</h3><p>تحديات على المسرح + فقرة مؤثر + مسابقات جمهور.</p></div>
     <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-calendar"/></svg></div><h3>آخر ويكند بالشهر</h3><p>البطولة الشهرية — حدث كبير ببث مباشر وجوائز.</p></div>
@@ -622,7 +637,7 @@ footer{
   <span class="kicker">شراكة طويلة المدى</span>
   <h2>هذي البداية — مو موسم واحد</h2>
   <p class="lead">نجاح النسخة الأولى يخلي «دا بي أرينا» عنصر ثابت برزنامة المواسم — وتجربة قابلة للنقل لأي موسم ومدينة.</p>
-  <div class="cards">
+  <div class="cards grid2">
     <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-repeat"/></svg></div><h3>المواسم القادمة</h3><p>أرينا محدثة بمحتوى وسكنات جديدة كل موسم.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-trophy"/></svg></div><h3>بطولة سنوية</h3><p>بطولة «دا بي» الكبرى حدث سنوي ثابت باسم الشراكة.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-globe"/></svg></div><h3>مواسم ومدن ثانية</h3><p>التجربة قابلة للنقل — جدة والعلا والمواسم الأخرى.</p></div>

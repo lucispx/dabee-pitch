@@ -288,12 +288,15 @@ footer{
   .stats { margin-top: -30px; break-inside: avoid; }
   section { break-before: page; min-height: 124vh; display: flex; flex-direction: column; justify-content: center; padding: 34px 40px; max-width: 1160px; }
   section > .kicker { align-self: flex-start; width: auto; }
+  .hero .btn { display: none; }
+  .hero .partners { margin-top: 28px; }
+  .hero .pill { margin-top: 30px; }
   .cta { break-before: page; min-height: 124vh; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 0; padding: 40px; }
   .btn { box-shadow: 0 5px 0 var(--honey-500), inset 0 2px 0 rgba(255,255,255,.5) !important; }
   .split .art img.girl { width: 240px; }
   .split .art .beefloat { width: 90px; }
   .card, table.plain, .booth, .lb, .tstep, .note, .checks li, .stats { break-inside: avoid; }
-  .pb { break-before: page; padding-top: 70px; }
+  .pb { break-before: page; padding-top: 110px !important; }
   .checks li { padding: 12px 16px; }
   .lb td { padding: 10px 16px; }
   .lead { margin-bottom: 22px; }
@@ -313,6 +316,20 @@ footer{
   h2 { break-after: avoid; }
   .kicker { break-after: avoid; }
   a[href]::after { content: none !important; }
+  .split { grid-template-columns: 1.05fr .95fr; }
+  .booth { grid-template-columns: 1.15fr .85fr; }
+  .lbwrap { grid-template-columns: .95fr 1.05fr; }
+  .grid2 { grid-template-columns: repeat(2,1fr); }
+  #journey .cards { grid-template-columns: repeat(3,1fr) !important; }
+  section br { display: none; }
+  br + table.plain, br + .cards, br + .booth, br + .timeline { margin-top: 20px; }
+  #stars, #agenda, #map { padding-top: 110px; }
+  #cost table.plain td, #tournament table.plain td { padding: 8px 16px; }
+  #tournament { padding-top: 24px; padding-bottom: 20px; }
+  #tournament .card { padding: 18px 24px; }
+  #tournament .cards { gap: 14px; }
+  .booth.pb { padding-top: 34px !important; position: relative; top: 280px; }
+  .cta { min-height: 112vh; }
 }
 </style>
 </head>
@@ -378,7 +395,6 @@ footer{
 
 <!-- HERO -->
 <header class="hero">
-  <img class="bee" src="assets/bee.svg" alt="">
   <img class="logo" src="assets/logo.png" alt="Da Bee">
   <h1>بوب أب <span class="gold">دا بي</span></h1>
   <p class="sub">أول تجربة قيمنق حية من نوعها في الكويت — لمدة أسبوع إلى أسبوعين</p>
@@ -408,7 +424,6 @@ footer{
       <li><span>النتيجة: موقع ينبض بالحياة، وجمهور شاب وعائلي <b>يزوره أكثر من مرة</b> طوال الفعالية.</span></li>
     </ul>
     <div class="art">
-      <img class="beefloat" src="assets/bee.svg" alt="">
       <img class="girl" src="assets/dabi-girl.png" alt="شخصية دابي">
     </div>
   </div>
@@ -418,7 +433,7 @@ footer{
 <section id="why" class="reveal">
   <span class="kicker">ليش هالشراكة؟</span>
   <h2>وش تستفيد المشروعات السياحية؟</h2>
-  <div class="cards">
+  <div class="cards grid2">
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-pin"/></svg></div><h3>تنشيط المواقع</h3><p>محتوى جديد كلياً يجذب جيل الشباب والعوائل لأحد مواقعكم، وحركة مباشرة على كل مرافق الموقع طوال الفعالية.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-megaphone"/></svg></div><h3>حضور إعلامي ورقمي</h3><p>تغطيات مؤثرين ومحتوى سوشيال ميديا يومي يبرز اسم المشروعات السياحية كشريك رسمي ومستضيف.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-phone"/></svg></div><h3>براندنق داخل اللعبة</h3><p>اسمكم وشعاركم داخل «دا بي» نفسها — وصول رقمي لكل لاعب، حتى اللي ما حضر الفعالية.</p></div>
@@ -430,14 +445,14 @@ footer{
 <section id="map" class="reveal">
   <span class="kicker">خريطة التجربة</span>
   <h2>مناطق الفعالية</h2>
-  <div class="cards">
+  <div class="cards grid2">
     <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-monitor"/></svg></div><h3>الساحة الرئيسية</h3><p>شاشة LED عملاقة تعرض لوحة الصدارة لايف + مسرح للدي جي والفقرات، مع مقدم فعاليات يدير البرنامج يومياً.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-hex"/></svg></div><h3>بوث دا بي</h3><p>مجسم خلية عسل مضيء بتصميم اللعبة — محطات اللعب وركن تصوير مع شخصية «دابي».</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-gift"/></svg></div><h3>هدايا دا بي</h3><p>أغراض اللعبة الرسمية (قبعات، تيشيرتات، دمى «دابي») توزع هدايا على الحضور خلال الفقرات والمسابقات.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-food"/></svg></div><h3>منطقة F&B</h3><p>عربات مأكولات ومشروبات وكافيهات بالتعاون مع مشاريع محلية.</p></div>
   </div>
   <br><br>
-  <div class="booth">
+  <div class="booth pb">
     <div id="boothMedia">
       <div class="ph">
         <div class="hexrow"><i></i><i></i><i></i></div>
@@ -698,7 +713,7 @@ footer{
   <span class="kicker">شراكة طويلة المدى</span>
   <h2>هذي البداية — مو فعالية وحدة</h2>
   <p class="lead">نجاح النسخة الأولى يفتح رزنامة «دا بي» السنوية بمواقعكم — شراكة مستمرة، مو تأجير موقع.</p>
-  <div class="cards">
+  <div class="cards grid2">
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-star"/></svg></div><h3>نسخة الأعياد الوطنية</h3><p>فبراير — هلا فبراير وأجواء الأعياد.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-sparkles"/></svg></div><h3>نسخة رمضان</h3><p>قعدات وتحديات ما بعد الإفطار.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-umbrella"/></svg></div><h3>نسخة الصيف</h3><p>الموسم السياحي الصيفي.</p></div>
