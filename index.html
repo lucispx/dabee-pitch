@@ -278,14 +278,38 @@ footer{
 @media print {
   @page { size: A4 landscape; margin: 0; }
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { zoom: .78; }
   nav { display: none !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
-  .hero { min-height: 100vh; }
+  .hero { min-height: 92vh; padding-top: 50px; }
+  .hero .logo { width: 340px; }
   .hero .logo, .hero .bee { animation: none !important; }
   .beefloat { animation: none !important; }
-  section { padding: 50px 40px 10px; }
-  .card, table.plain, .booth, .lb, .stat, .tstep, .note { break-inside: avoid; }
-  .cta { margin-top: 40px; }
+  .stats { margin-top: -30px; break-inside: avoid; }
+  section { break-before: page; padding: 44px 40px 10px; max-width: 1160px; }
+  .cta { break-before: page; margin-top: 0; padding-top: 90px; }
+  .split .art img.girl { width: 240px; }
+  .split .art .beefloat { width: 90px; }
+  .card, table.plain, .booth, .lb, .tstep, .note, .checks li, .stats { break-inside: avoid; }
+  .pb { break-before: page; padding-top: 30px; }
+  .checks li { padding: 12px 16px; }
+  .lb td { padding: 10px 16px; }
+  .lead { margin-bottom: 22px; }
+  table.plain td { padding: 11px 18px; }
+  table.plain th { padding: 12px 18px; }
+  .subhead { break-after: avoid; }
+  * { text-shadow: none !important; }
+  .hero .logo, .cta img, .hero .bee, .beefloat, .split .art img.girl { filter: none !important; }
+  .logochip img { filter: brightness(1.15) !important; }
+  .booth, .lb { box-shadow: none !important; }
+  .lbwrap { gap: 28px; }
+  .lb td { padding: 8px 16px; font-size: 15px; }
+  .lb .lbhead { padding: 10px; }
+  .lb .sponsor { padding: 8px; }
+  .checks { gap: 10px; }
+  .subhead { margin: 22px 0 12px; padding-top: 12px; }
+  h2 { break-after: avoid; }
+  .kicker { break-after: avoid; }
   a[href]::after { content: none !important; }
 }
 </style>
@@ -515,7 +539,7 @@ footer{
       <p style="margin-top:10px">تعليق البطولة وبثها + تغطيات يومية لايف ستايل وعائلية طوال الفعالية.</p><b class="fee">التقدير: 7–10 آلاف د.ك</b></div>
   </div>
 
-  <div class="subhead"><svg class="icon"><use href="#i-gem"/></svg><h3>ترقيات اختيارية (خارج الـ 80 ألف — حسب رغبتكم)</h3></div>
+  <div class="subhead pb"><svg class="icon"><use href="#i-gem"/></svg><h3>ترقيات اختيارية (خارج الـ 80 ألف — حسب رغبتكم)</h3></div>
   <table class="plain">
     <tr><th>الترقية</th><th>الخيارات</th><th style="text-align:left">التكلفة الإضافية (د.ك)</th></tr>
     <tr><td>دي جي عالمي (الافتتاح والختام)</td><td>دي جي عالمي من قائمة التوب 100 — 3 مرشحين</td><td class="num">+30,000–40,000</td></tr>
@@ -550,7 +574,7 @@ footer{
     <tr><td>الأربعاء — يوم 7</td><td><svg class="icon icon-sm"><use href="#i-controller"/></svg>تحدي المشاهير: معلق القيمنق ضد الجمهور — أول بث مباشر للبطولة</td></tr>
   </table>
   <br>
-  <h3 style="font-size:22px; margin-bottom:14px">الأسبوع الثاني</h3>
+  <h3 class="pb" style="font-size:22px; margin-bottom:14px">الأسبوع الثاني</h3>
   <table class="plain">
     <tr><th>اليوم</th><th>الفقرة الرئيسية</th></tr>
     <tr><td>الخميس — يوم 8</td><td><svg class="icon icon-sm"><use href="#i-sparkles"/></svg>Glow Night: ليلة دي جي بإضاءة نيون وتوزيعات مضيئة</td></tr>
@@ -625,7 +649,7 @@ footer{
     <tr class="total"><td>الإجمالي — الميزانية الأساسية</td><td class="num">80,000 د.ك</td></tr>
   </table>
   <div class="note"><b>كيف انحسبت الأرقام؟</b> المجموع قبل الاحتياطي 73,000 د.ك (تقدر تجمع البنود وتتأكد) + احتياطي ~10% = 80,000 د.ك بالضبط. الأسعار مبنية على متوسطات السوق بالكويت وكل بند قابل للتفاوض — والترقيات الاختيارية (دي جي عالمي، الليلة الكبرى، الدرون، النجم العربي) مسعرة بشكل منفصل بقسم النجوم وتضاف فقط لو اعتمدتوها.</div>
-  <div class="subhead"><svg class="icon"><use href="#i-chart"/></svg><h3>الإيراد المقابل — التذاكر والرعاة والبوثات</h3></div>
+  <div class="subhead pb"><svg class="icon"><use href="#i-chart"/></svg><h3>الإيراد المقابل — التذاكر والرعاة والبوثات</h3></div>
   <div class="cards">
     <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-bag"/></svg></div><h3>تذاكر الدخول</h3><p>3 د.ك للبالغين — والأطفال مجاناً. بواقع الزيارات المتوقعة، الإيراد التقديري <b style="color:var(--honey-200)">≈ 18–30 ألف د.ك</b>.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-star"/></svg></div><h3>باقات الرعاية</h3><p>3 مستويات رعاية تفتح حسب القطاع (اتصالات، مشروبات، بنوك، تجزئة) — الأسماء تتحدد بالتفاوض وبموافقة الشريك.</p></div>

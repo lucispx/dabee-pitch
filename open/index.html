@@ -278,14 +278,38 @@ footer{
 @media print {
   @page { size: A4 landscape; margin: 0; }
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { zoom: .78; }
   nav { display: none !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
-  .hero { min-height: 100vh; }
+  .hero { min-height: 92vh; padding-top: 50px; }
+  .hero .logo { width: 340px; }
   .hero .logo, .hero .bee { animation: none !important; }
   .beefloat { animation: none !important; }
-  section { padding: 50px 40px 10px; }
-  .card, table.plain, .booth, .lb, .stat, .tstep, .note { break-inside: avoid; }
-  .cta { margin-top: 40px; }
+  .stats { margin-top: -30px; break-inside: avoid; }
+  section { break-before: page; padding: 44px 40px 10px; max-width: 1160px; }
+  .cta { break-before: page; margin-top: 0; padding-top: 90px; }
+  .split .art img.girl { width: 240px; }
+  .split .art .beefloat { width: 90px; }
+  .card, table.plain, .booth, .lb, .tstep, .note, .checks li, .stats { break-inside: avoid; }
+  .pb { break-before: page; padding-top: 30px; }
+  .checks li { padding: 12px 16px; }
+  .lb td { padding: 10px 16px; }
+  .lead { margin-bottom: 22px; }
+  table.plain td { padding: 11px 18px; }
+  table.plain th { padding: 12px 18px; }
+  .subhead { break-after: avoid; }
+  * { text-shadow: none !important; }
+  .hero .logo, .cta img, .hero .bee, .beefloat, .split .art img.girl { filter: none !important; }
+  .logochip img { filter: brightness(1.15) !important; }
+  .booth, .lb { box-shadow: none !important; }
+  .lbwrap { gap: 28px; }
+  .lb td { padding: 8px 16px; font-size: 15px; }
+  .lb .lbhead { padding: 10px; }
+  .lb .sponsor { padding: 8px; }
+  .checks { gap: 10px; }
+  .subhead { margin: 22px 0 12px; padding-top: 12px; }
+  h2 { break-after: avoid; }
+  .kicker { break-after: avoid; }
   a[href]::after { content: none !important; }
 }
 </style>
@@ -511,7 +535,7 @@ footer{
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-users"/></svg></div><h3>مؤثرون سعوديون</h3><p>تغطيات شهرية منتظمة طوال الموسم — لايف ستايل وقيمنق.</p><b class="fee">ضمن بند المؤثرين: 120,000 ريال</b></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-radio"/></svg></div><h3>الشريك الإعلامي</h3><p>منصة أو إذاعة سعودية — يتحدد بالتنسيق مع إدارة الموسم.</p></div>
   </div>
-  <div class="subhead"><svg class="icon"><use href="#i-gem"/></svg><h3>ترقيات اختيارية (خارج الميزانية الأساسية)</h3></div>
+  <div class="subhead pb"><svg class="icon"><use href="#i-gem"/></svg><h3>ترقيات اختيارية (خارج الميزانية الأساسية)</h3></div>
   <table class="plain">
     <tr><th>الترقية</th><th>الخيارات</th><th style="text-align:left">التكلفة الإضافية (ريال)</th></tr>
     <tr><td>دي جي عالمي لحفل الختام</td><td>دي جي عالمي من قائمة التوب 100 — 3 مرشحين</td><td class="num">+400,000–550,000</td></tr>
