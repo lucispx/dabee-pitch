@@ -324,12 +324,16 @@ footer{
   #journey .cards { grid-template-columns: repeat(3,1fr) !important; }
   section br { display: none; }
   br + table.plain, br + .cards, br + .booth, br + .timeline { margin-top: 20px; }
-  #stars, #agenda, #map { padding-top: 110px; }
+  #stars, #agenda { padding-top: 80px; }
+  #map { padding-top: 220px; }
   #cost table.plain td, #tournament table.plain td { padding: 8px 16px; }
   #tournament { padding-top: 24px; padding-bottom: 20px; }
   #tournament .card { padding: 18px 24px; }
   #tournament .cards { gap: 14px; }
   .booth.pb { padding-top: 34px !important; position: relative; top: 280px; }
+  .pb2 { padding-top: 230px !important; }
+  table.plain.pb { padding-top: 0 !important; margin-top: 230px; }
+  table.plain.pb.pb3 { margin-top: 320px; }
   .cta { min-height: 112vh; }
 }
 </style>
@@ -624,7 +628,7 @@ footer{
     <tr class="total"><td>الإجمالي التقديري</td><td class="num">1,950,000 ريال</td><td class="num">≈ 160,000 د.ك</td></tr>
   </table>
   <div class="note"><b>كيف انحسبت الأرقام؟</b> المجموع قبل الاحتياطي 1,772,000 ريال + احتياطي ~10% = 1,950,000 ريال بالضبط (≈ 160 ألف د.ك). <b>والنموذج التجاري مرن:</b> رسوم مشاركة كعارض، أو شراكة محتوى مقابل المساحة، أو مشاركة إيراد — حسب سياسة إدارة الموسم. الرعايات التجارية داخل الموسم تدار عبر إدارة الموسم ونلتزم بنظامها بالكامل.</div>
-<div class="subhead pb"><svg class="icon"><use href="#i-gem"/></svg><h3>ترقيات اختيارية (خارج الميزانية الأساسية)</h3></div>
+<div class="subhead pb pb2"><svg class="icon"><use href="#i-gem"/></svg><h3>ترقيات اختيارية (خارج الميزانية الأساسية)</h3></div>
   <table class="plain">
     <tr><th>الترقية</th><th>الخيارات</th><th style="text-align:left">التكلفة الإضافية (ريال)</th></tr>
     <tr><td>دي جي عالمي لحفل الختام</td><td>دي جي عالمي من قائمة التوب 100 — 3 مرشحين</td><td class="num"><span dir="ltr">+400,000–550,000</span></td></tr>
@@ -634,7 +638,7 @@ footer{
   </table>
   <div class="note"><b>فرصة إيراد ذاتي — فوتوبوث دا بي:</b> بتكلفة إضافية ~100,000 ريال (≈ 8,000 د.ك) — جهازان + مواد طباعة الموسم كامل. الصورة المطبوعة بإطار اللعبة 15 ريال (≈ 1.2 د.ك) والرقمية مجاناً مقابل التسجيل. الإيراد المتوقع <span dir="ltr">150,000–250,000</span> ريال (≈ <span dir="ltr">12–20</span> ألف د.ك)، أي <b>ربح صافٍ <span dir="ltr">~50,000–150,000</span> ريال (≈ <span dir="ltr">4–12</span> ألف د.ك)</b> فوق قيمة الداتا والمحتوى — رهن موافقة إدارة الموسم على البيع داخل المنطقة، وخارج الميزانية الأساسية لأنه يمول نفسه.</div>
 
-  <div class="subhead pb"><svg class="icon"><use href="#i-chart"/></svg><h3>الإيراد المقابل — تذاكر الأرينا والمبيعات</h3></div>
+  <div class="subhead pb pb2"><svg class="icon"><use href="#i-chart"/></svg><h3>الإيراد المقابل — تذاكر الأرينا والمبيعات</h3></div>
   <div class="cards grid2">
     <div class="card featured"><div class="ico"><svg class="icon"><use href="#i-bag"/></svg></div><h3>تذاكر الأرينا</h3><p>الأرينا أتراكشن مدفوع أسوة بتجارب البوليفارد — تذكرة 50 ريال تشمل جلسة لعب تنافسية ودخول البطولة ومكافأة داخل اللعبة، والمشاهدة ولوحة الصدارة مجاناً للجميع.</p></div>
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-star"/></svg></div><h3>فوتوبوث دا بي</h3><p>الصورة المطبوعة بإطار اللعبة 15 ريال — والرقمية مجاناً مقابل التسجيل.</p></div>
@@ -642,7 +646,7 @@ footer{
     <div class="card"><div class="ico"><svg class="icon"><use href="#i-phone"/></svg></div><h3>رعاية الأصول الرقمية</h3><p>رعاية لوحة الصدارة الرقمية والبث الشهري داخل اللعبة — أصل رقمي نملكه، بالتنسيق مع إدارة الموسم.</p></div>
   </div>
   <br>
-  <table class="plain">
+  <table class="plain pb pb3">
     <tr><th>مصدر الإيراد</th><th style="text-align:left">ريال سعودي</th><th style="text-align:left">≈ دينار كويتي</th></tr>
     <tr><td>تذاكر الأرينا (<span dir="ltr">40,000–70,000</span> تذكرة × 50 ريال على الموسم)</td><td class="num"><span dir="ltr">2,000,000–3,500,000</span></td><td class="num"><span dir="ltr">164–287</span> ألف</td></tr>
     <tr><td>الفوتوبوث (<span dir="ltr">10,000–17,000</span> طباعة)</td><td class="num"><span dir="ltr">150,000–250,000</span></td><td class="num"><span dir="ltr">12–20</span> ألف</td></tr>
